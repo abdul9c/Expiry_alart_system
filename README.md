@@ -1,41 +1,61 @@
-# Expiry Alert System — Local Development
+# Expiry Alert System
 
-This project is a small web app to track product expiration dates. It includes a frontend (HTML/CSS/JS) and a simple Flask+SQLite backend.
+Short description
+-----------------
 
-Setup
+Expiry Alert System is a lightweight web application to track product expiration dates, receive alerts, and manage a small inventory. It includes a simple frontend (HTML/CSS/JS) and a Flask+SQLite backend that provides basic product CRUD and simple user registration/login endpoints.
 
-1. Create a Python virtual environment and install dependencies:
+Key features
+------------
+
+- Add products with name, description, and expiration date.
+- View a product list showing expiration status (Expired / Less than 2 weeks / Good).
+- Delete products from the list.
+- Basic user registration and login API endpoints (no token-based auth yet).
+
+API Endpoints (provided by `app.py`)
+-----------------------------------
+
+- `GET /api/products` — list products
+- `POST /api/products` — add product (JSON: `{name, description, expiration_date}`)
+- `DELETE /api/products/<id>` — delete product
+- `POST /api/register` — register user (JSON: `{username, email, password}`)
+- `POST /api/login` — login (JSON: `{email, password}`)
+
+Quick setup (local)
+-------------------
+
+Run these commands from the project root:
 
 ```bash
+# create and activate a virtualenv
 python3 -m venv .venv
 source .venv/bin/activate
+
+# install dependencies
 pip install -r requirements.txt
-```
 
-2. Initialize the database:
-
-```bash
+# initialize DB
 python3 db_init.py
-```
 
-3. Run the server:
-
-```bash
+# run backend (Flask, port 5000)
 python3 app.py
-```
 
-4. Serve frontend files or open `index.html` directly. For best results, run a dev server from the project root:
-
-```bash
-# from project root
+# in another terminal serve static frontend (port 8000)
 python3 -m http.server 8000
 ```
 
-Then visit `http://localhost:8000` and use the UI.
+Open the frontend: `http://localhost:8000/index.html` (add product) and `http://localhost:8000/products.html` (view/delete products).
 
-Notes & Next Steps
+Notes & next steps
+------------------
 
-- The backend provides REST endpoints under `/api/*` for products and basic auth (no tokens implemented).
-- Improve authentication with JWT and sessions for protected operations.
-- Add validation and better error handling server-side.
-- Add tests and CI integration.
+- Secure authentication: add JWT tokens or server-side sessions and protect product endpoints.
+- Server-side validation and improved error responses.
+- Add tests for API endpoints and JavaScript integration tests.
+- Consider deploying using a WSGI server (Gunicorn/uvicorn) behind Nginx and move the static frontend to a CDN.
+
+License & contribution
+----------------------
+
+This is a personal project scaffold — add a license file (`LICENSE`) and contribution guidelines if you want others to collaborate.
