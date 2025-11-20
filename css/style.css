@@ -1,0 +1,92 @@
+/* Combined and cleaned stylesheet for the Expiry Alert System */
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #222;
+  line-height: 1.4;
+  padding: 20px;
+}
+
+h1, h2 {
+  margin-bottom: 16px;
+}
+
+/* Forms */
+form {
+  max-width: 640px;
+  margin: 0 auto 24px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  border: 1px solid #d0d0d0;
+}
+
+input[type="submit"],
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #45a049;
+}
+
+/* Login styles */
+.login-container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.form-container { overflow: hidden; }
+.login-form { display: none; padding: 28px; background: #fff; border-radius: 8px; }
+.login-form.active { display: block; }
+.switch { text-align: center; margin-top: 8px; }
+.switch a { color: #0b66d0; text-decoration: none; }
+.switch a:hover { text-decoration: underline; }
+
+/* Product table */
+.product-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+.product-table th, .product-table td { border: 1px solid #e0e0e0; padding: 10px; text-align: left; }
+.product-table th { background-color: #fafafa; }
+
+.expiration-status { font-weight: 700; }
+.expiration-status[data-status="expired"] { color: #c62828; }
+.expiration-status[data-status="less-than-2-weeks"] { color: #ff9800; }
+.expiration-status[data-status="good"] { color: #2e7d32; }
+
+.delete-btn { background-color: #ff3333; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; }
+.delete-btn:hover { background-color: #cc0000; }
+
+/* Utility */
+.center { text-align: center; }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product List</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h2>Product List</h2>
+
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Product Description</th>
+        <th>Expiration Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Sample product rows -->
+      <tr>
+        <td>Product 1</td>
+        <td>Description for Product 1</td>
+        <td class="expiration-status">Expired</td>
+        <td><button class="delete-btn">Delete</button></td>
+      </tr>
+      <tr>
+        <td>Product 2</td>
+        <td>Description for Product 2</td>
+        <td class="expiration-status">Less than 2 weeks</td>
+        <td><button class="delete-btn">Delete</button></td>
+      </tr>
+      <tr>
+        <td>Product 3</td>
+        <td>Description for Product 3</td>
+        <td class="expiration-status">Good</td>
+        <td><button class="delete-btn">Delete</button></td>
+      </tr>
+      <!-- Add more product rows as needed -->
+    </tbody>
+  </table>
+
+  <script src="js/products.js"></script>
+</body>
+</html>
